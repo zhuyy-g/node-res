@@ -1,0 +1,15 @@
+{
+  "name": "npm-copy",
+  "version": "1.0.0",
+  "description": "npm项目转移",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhuyy-g",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0"
+  }
+}

@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const moment = require("moment");
 
 var server = http.createServer()
 
@@ -35,7 +36,7 @@ server.on("request",function (req,res){
                         }
                         arr_data[i].name = data[i];
                         arr_data[i].size = file.size;
-                        arr_data[i].mtime = file.mtime;
+                        arr_data[i].mtime = moment(file.mtime).format("YYYY-MM-DD  hh-mm-ss");
                         if(i == data.length - 1){
                             res.end(JSON.stringify(arr_data));
                         }
