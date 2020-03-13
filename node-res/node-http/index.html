@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title></title>
+        <style>
+            li {
+                line-height: 50px;
+            }
+            * {
+                list-style: none;
+            }
+            a {
+                color: #c04141;
+                text-decoration: none;
+            }
+            a:hover {
+                color: black;
+                text-decoration: underline;
+            }
+            .for-time {
+                display: inline-block;
+                width: 340px;
+                text-align: center;
+                color: black;
+            }
+            .for-size {
+                display: inline-block;
+                width: 100px;
+                text-align: center;
+                color: black;
+            }
+        </style>
+	</head>
+	
+	<body>
+        <ul id="main"></ul>
+    </body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function (){
+            if(xhr.readyState == 4){
+                var data = JSON.parse(xhr.responseText);
+                var arr_data = [];
+                for(var i in data) {
+                    arr_data.push("<li>");
+                    if(data[i].type == 'f'){
+                        arr_data.push("...");
+                    }
+                    arr_data.push("<a href='#'>");
+                    arr_data.push(data[i].name);    
+                    arr_data.push("</a>");
+                    arr_data.push("<span class='for-time'>");
+                    arr_data.push(data[i].mtime);    
+                    arr_data.push("</span>");
+                    arr_data.push("<span class='for-size'>");
+                    arr_data.push(data[i].size);    
+                    arr_data.push("</span>");
+                    arr_data.push("</li>");
+                }
+                document.getElementById("main").innerHTML = arr_data.join("");
+            }
+        }
+        xhr.open("get","./list-file");
+        xhr.send();
+    </script>
+</html>
