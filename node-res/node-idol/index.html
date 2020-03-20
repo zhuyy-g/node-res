@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>我的idol们</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<table class="table">
+   <thead>
+      <tr>
+         <th>编号</th>
+         <th>姓名</th>
+         <th>性别</th>
+         <th>特长</th>
+         <th>操作</th>
+      </tr>
+   </thead>
+   <tbody>
+   	 {{each data}}
+        <tr>
+	         <td>{{$value.id}}</td>
+	         <td>{{$value.name}}</td>
+	         <td>{{$value.sex}}</td>
+	         <td>{{$value.ability}}</td>
+	         <td>
+	         	<a href="/getone?id={{$value.id}}">查看</a>&nbsp;
+	         	<a href="/updateone?id={{$value.id}}">修改</a>&nbsp;
+	         	<a href="/deleteone?id={{$value.id}}">删除</a>&nbsp;
+	         </td>
+      	</tr>
+      {{/each}}
+      <tr>
+   </tbody>
+</table>
+
+</body>
+</html>

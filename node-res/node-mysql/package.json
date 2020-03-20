@@ -1,0 +1,12 @@
+{
+  "name": "mysql",
+  "version": "1.0.0",
+  "description": "这是我的用到数据库的node项目",
+  "main": "node.01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
