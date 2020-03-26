@@ -31,6 +31,8 @@ module.exports.bind = function (server) {
             var urlObj = url.parse(request.url,true);
             if(urlObj.pathname == "/updateone") {
                 yewu.upuser_post(request,response);
+            }else if(urlObj.pathname == "/addone") {
+                yewu.addOne_post(request,response);
             }
         }else {
 

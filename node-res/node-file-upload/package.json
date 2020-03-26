@@ -1,0 +1,15 @@
+{
+  "name": "file-upload",
+  "version": "1.0.0",
+  "description": "这个包用来测试node中的文件上传",
+  "main": "http.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.2"
+  }
+}

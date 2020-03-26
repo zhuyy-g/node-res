@@ -51,6 +51,7 @@ module.exports = {
             }
             set = set.slice(0,set.length - 1);
             var sql = "update idol set " + set + " where " + this.wh;
+            console.log(sql);
             connection.query (sql,function (err,db_data){
                 call(db_data.changedRows);
             })
@@ -66,5 +67,18 @@ module.exports = {
                 call(db_data.changedRows)
             })
         }
+    },
+    add: function(data,call){
+        var db_data = "";
+        for(var i in data){
+            db_data += "'"+data[i] +"',";
+        }
+        db_data = db_data.slice(0,db_data.length - 1);
+        console.log(db_data);
+        var sql = 'insert into idol (name,ability,sex) values (' + db_data + ')';
+        console.log(sql);
+        connection.query(sql,function(err,db_data){
+            call(db_data.changedRows);
+        })
     }
 }

@@ -8,7 +8,7 @@
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<button type="button" class="btn btn-success" id="addone">添加</button>
 <table class="table">
    <thead>
       <tr>
@@ -36,6 +36,10 @@
       <tr>
    </tbody>
 </table>
-
 </body>
+<script>
+	document.getElementById("addone").onclick = function(){
+		window.location.href = "./add.html";
+	}
+</script>
 </html>

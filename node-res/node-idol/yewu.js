@@ -37,7 +37,6 @@ module.exports = {
         })
     },
     upuser_post: function(req,res){
-        console.log(111);
         var qu_data = "";
         req.on("data",function(data){
             qu_data += data
@@ -65,6 +64,22 @@ module.exports = {
                 res.setHeader("Content-type","text/html;charset=utf-8");
                 res.end(html);
             }
+        })
+    },
+    addOne_post: function(req,res){
+        var add_data = "";
+        req.on("data",function(data){
+            add_data += data;
+        })
+        req.on("end",function(){
+            var data_obj = JSON.parse(JSON.stringify(querystring.parse(add_data)));
+            linkdb.add(data_obj,function(data){
+                if(data.toString() >= 1){
+                    var html = "<script>alert('添加成功');window.location.href='./'</script>";
+                    res.setHeader("Content-type","text/html;charset='utf-8'");
+                    res.end(html);
+                }
+            })
         })
     }
 }

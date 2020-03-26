@@ -1,0 +1,20 @@
+{
+  "name": "idol-express",
+  "version": "1.0.0",
+  "description": "这是对idol项目的改装，用express框架写的",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "bootstrap": "^4.4.1",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "express-art-template": "^1.0.1",
+    "formidable": "^1.2.2",
+    "mysql": "^2.18.1"
+  }
+}
